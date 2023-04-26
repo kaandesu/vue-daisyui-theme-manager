@@ -1,0 +1,75 @@
+{
+  "name": "vue-daisyui-theme-manager",
+  "author": "I Kaan Yilmaz <kaandesu00@gmail.com> (https://github.com/kaandesu)",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "A plugin that allows you to change DaisyUI themes during runtime. As well as, setting default light and dark themes, and matching the system theme.",
+  "contributors": [
+    {
+      "name": "I Kaan Yilmaz",
+      "email": "kaandesu00@gmail.com"
+    }
+  ],
+  "keywords": [
+    "vue",
+    "daisyUI",
+    "theme",
+    "vue3",
+    "tailwindcss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaandesu/vue-daisyui-theme-manager.git"
+  },
+  "homepage": "https://kaandesu.github.io/vue-daisyui-theme-manager/",
+  "bugs": {
+    "url": "https://github.com/kaandesu/vue-daisyui-theme-manager/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-daisyui-theme-manager.umd.cjs",
+  "module": "./dist/vue-daisyui-theme-manager.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-daisyui-theme-manager.js",
+      "require": "./dist/vue-daisyui-theme-manager.umd.cjs"
+    }
+  },
+  "types": "./dist/types.d.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run generate:types",
+    "generate:types": "vue-tsc --declaration --emitDeclarationOnly true --outdir ./dist"
+  },
+  "dependencies": {
+    "daisyui": "^2.51.6",
+    "paho-mqtt": "^1.1.0",
+    "sweetalert2": "^11.7.3",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "@types/intro.js": "^5.1.1",
+    "@types/node": "^18.15.11",
+    "@types/paho-mqtt": "^1.0.6",
+    "@types/ws": "^8.5.4",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "@vitest/coverage-c8": "^0.30.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.37.0",
+    "eslint-plugin-vue": "^9.10.0",
+    "intro.js": "^7.0.1",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0",
+    "vitest": "^0.30.0",
+    "vue-eslint-parser": "^9.1.1",
+    "vue-tsc": "^1.2.0",
+    "ws": "^8.13.0"
+  }
+}
