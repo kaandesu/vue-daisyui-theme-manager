@@ -16,8 +16,6 @@ These are the useful scripts that you can use while developing. You can find the
 | `build`          | Type check and build the app           |
 | `generate:types` | Generate all the types for the project |
 
-[//]: # 'When pushing your changes, always include a **changeset** file. You can do this by running the `changeset` script. It will ask you a few questions and then create a file for you. You can read more about it [here](https://github.com/changesets/changesets/blob/main/docs/adding-a-changeset.md).'
-
 ### 🐛 **Did you find a bug?**
 
 Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/kaandesu/vue-daisyui-theme-manager/issues). If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/kaandesu/vue-daisyui-theme-manager/issues/new). Be sure to include a **title and clear description**, as much relevant information as possible demonstrating the expected behavior that is not occurring.
@@ -36,24 +34,19 @@ Open a new GitHub pull request with the patch.
    ```sh
    git checkout -b feature/<your_feature>
    ```
-4. **IMPORTANT!** If your code contains minor or a major change that needs to be stated on the changelog, please run the command below and write down what you have changed in a brief manner.
-   ```sh
-   // skip this for now
-   // npm run changeset
-   ```
-5. Add your changes
+4. Add your changes
    ```sh
    git add .
    ```
-6. Commit your changes _(please respect the commit message standards)_
+5. Commit your changes _(please respect the commit message standards)_
    ```sh
    git commit -m "feat: added amazing things!"
    ```
-7. Push your changes
+6. Push your changes
    ```sh
    git push -u origin feature/<your_feature>
    ```
-8. Open a pull request from your branch
+7. Open a pull request from your branch
    - State your change in the title according to the [conventional commit guidelines](https://www.conventionalcommits.org/en/v1.0.0/).
    - Please respect the pull request template while writing your PR description.
 
