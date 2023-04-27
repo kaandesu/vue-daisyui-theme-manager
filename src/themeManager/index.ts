@@ -1,7 +1,8 @@
 import type { App } from 'vue'
 import { defaults, pluginInitiated, currentTheme, isDark } from './reactives'
-import { availableThemes } from 'src/theme-manager.config'
-export type DaisyThemes = (typeof availableThemes)[number]
+// @ts-ignore
+import config from 'theme-manager.config'
+export type DaisyThemes = (typeof config)[number]
 export type ThemeOptions = {
   light: DaisyThemes
   dark: DaisyThemes

@@ -11,17 +11,9 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "types": ["node"],
-    "baseUrl": "./",
-    "paths": {
-      "~/*": ["src/themeManager/*"]
-    }
+    "types": ["node"],    
+    "baseUrl": "./"        
   },
-  "include": [
-    "src/themeManager/*.ts",
-    "src/themeManager/*.d.ts",
-    "src/themeManager/*.tsx",
-    "src/themeManager/*.vue"
-  ],
+  "include": ["src/themeManager/*.ts", "src/themeManager/*.d.ts", "src/themeManager/*.tsx", "src/themeManager/*.vue"],    
   "references": [{ "path": "./tsconfig.node.json" }]
 }

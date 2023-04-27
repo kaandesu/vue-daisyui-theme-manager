@@ -1,7 +1,9 @@
-// add the names of the themes you want to use here
+import fs from 'fs';
+
+const configContent = `// add the names of the themes you want to use here
 // warning: you need to specify them in tailwind.config.js as well
 // DO NOT REMOVE: 'default', 'light', 'dark'
-export const availableThemes = [
+export default[
   'default',
   'light',
   'dark',
@@ -34,4 +36,8 @@ export const availableThemes = [
   'night',
   'coffee',
   'winter',
-] as const
+] as const;
+`
+
+fs.mkdirSync('./src', { recursive: true })
+fs.writeFileSync('./theme-manager.config.ts', configContent)

@@ -1,6 +1,39 @@
 <script setup lang="ts">
 import { type DaisyThemes, useThemeManager } from './themeManager'
-import { availableThemes as daisyThemes } from './theme-manager.config'
+const daisyThemes = [
+  'default',
+  'light',
+  'dark',
+  'storm',
+  'breeze',
+  'cupcake',
+  'bumblebee',
+  'emerald',
+  'corporate',
+  'synthwave',
+  'retro',
+  'cyberpunk',
+  'valentine',
+  'halloween',
+  'garden',
+  'forest',
+  'aqua',
+  'lofi',
+  'pastel',
+  'fantasy',
+  'wireframe',
+  'black',
+  'luxury',
+  'dracula',
+  'cmyk',
+  'autumn',
+  'business',
+  'acid',
+  'lemonade',
+  'night',
+  'coffee',
+  'winter',
+] as const;
 import { ref, computed } from 'vue';
 const $theme = useThemeManager()
 const changeTheme = (e: any) => $theme.set(e.target.value as DaisyThemes)

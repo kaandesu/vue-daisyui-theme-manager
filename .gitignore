@@ -11,6 +11,7 @@ package-lock.json
 node_modules
 .DS_Store
 dist
+live-demo
 *.local
 
 # Editor directories and files

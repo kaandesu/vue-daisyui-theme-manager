@@ -1,0 +1,27 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # To push a branch 
+      pull-requests: write  # To create a PR from that branch
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm ci      
+      - name: Unit tests
+        run: npm run test:unit        
+      - name: Build for production
+        run: npm run build
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

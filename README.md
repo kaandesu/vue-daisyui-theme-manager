@@ -2,6 +2,8 @@
 
 This plugin allows you to change the theme of your application at runtime. It also allows you to watch for system theme changes and update the theme accordingly.
 
+[live-demo](https://kaandesu.github.io/vue-daisyui-theme-manager/)
+
 # API
 
 ## Plugin Setup: `createThemeManager`
