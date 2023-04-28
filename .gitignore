@@ -13,6 +13,7 @@ node_modules
 dist
 live-demo
 *.local
+theme-manager.config.ts
 
 # Editor directories and files
 .vscode/*

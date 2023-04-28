@@ -26,8 +26,7 @@
     "url": "https://github.com/kaandesu/vue-daisyui-theme-manager/issues"
   },
   "files": [
-    "dist",
-    "create-config.ts"
+    "dist"
   ],
   "main": "./dist/vue-daisyui-theme-manager.umd.cjs",
   "module": "./dist/vue-daisyui-theme-manager.js",
@@ -43,7 +42,7 @@
     "dev": "vite",
     "build": "vite build && cp ./create-config.js ./dist && npm run generate:types && npm run build:live-demo",
     "build:live-demo": "vite build --mode live-demo --outDir ./live-demo",
-    "generate:types": "vue-tsc -p tsconfig-build.json --module commonjs",
+    "generate:types": "vue-tsc -p tsconfig-build.json",
     "postinstall": "node create-config.js"
   },
   "dependencies": {
