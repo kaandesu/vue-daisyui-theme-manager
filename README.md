@@ -4,14 +4,28 @@ This plugin allows you to change the theme of your application at runtime. It al
 
 [live-demo](https://kaandesu.github.io/vue-daisyui-theme-manager/)
 
+Install:
+
+```bash
+npm i vue-daisyui-theme-manager
+```
+
+## Setup
+
+As you install `theme-manager.config.ts` will be automatically created and added to the root folder of your project. <br> You can set up the available themes in this file. It will be also used as type definition. But don't forget to specify the list of themes in `tailwind.config.js` as well. More information about setting up the themes at [DaisyUI Themes Setup](https://daisyui.com/docs/themes/).
+
 # API
+
+## Initial Setup
+
+As you insts
 
 ## Plugin Setup: `createThemeManager`
 
 Initiate the plugin with the default theme and the dark theme. Theme options are from Daisiy UI themes as well as some custom added themes. Check all the built-in [DaisyUI Themes](https://daisyui.com/docs/themes/). <br> Create your own custom daisy ui theme [here](https://daisyui.com/theme-generator/) and add it to the `tailwind.config.js` file! <br>
 
 ```ts
-type DaisyThemes = "light" | "default" | "storm" | "breeze" | "dark" | "cupcake" |
+type DaisyThemes = "light" | "default" | "dark" | "cupcake" |
  "bumblebee" | "emerald" | "corporate" | "synthwave" | "retro" | "cyberpunk" |
   "valentine" | "halloween" | "garden" |  'forest' | 'aqua' | 'lofi' | 'pastel' |
   'fantasy' | 'wireframe' | 'black' | 'luxury' | 'dracula' | 'cmyk' | 'autumn' |
@@ -43,8 +57,8 @@ import { createThemeManager } from '@/plugins/themeManager'
 const app = createApp(App)
 app.use(
   createThemeManager({
-    light: 'breeze',
-    dark: 'storm',
+    light: 'aqua',
+    dark: 'coffee',
     watchSystemTheme: true,
   })
 )

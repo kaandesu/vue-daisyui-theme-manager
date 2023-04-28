@@ -1,7 +1,7 @@
 {
   "name": "vue-daisyui-theme-manager",
   "author": "I Kaan Yilmaz <kaandesu00@gmail.com> (https://github.com/kaandesu)",
-  "version": "0.0.1",
+  "version": "0.0.22",
   "license": "MIT",
   "description": "A plugin that allows you to change DaisyUI themes during runtime. As well as, setting default light and dark themes, and matching the system theme.",
   "contributors": [
@@ -26,7 +26,9 @@
     "url": "https://github.com/kaandesu/vue-daisyui-theme-manager/issues"
   },
   "files": [
-    "dist"
+    "dist",
+    "create-config.js", 
+    "set-config-path.js" 
   ],
   "main": "./dist/vue-daisyui-theme-manager.umd.cjs",
   "module": "./dist/vue-daisyui-theme-manager.js",
@@ -43,7 +45,8 @@
     "build": "vite build && cp ./create-config.js ./dist && npm run generate:types && npm run build:live-demo",
     "build:live-demo": "vite build --mode live-demo --outDir ./live-demo",
     "generate:types": "vue-tsc -p tsconfig-build.json",
-    "postinstall": "node create-config.js"
+    "set-conf": "node set-config-path.js",
+    "postinstall": "node create-config.js && npm run set-conf" 
   },
   "dependencies": {
     "daisyui": "^2.51.6",    

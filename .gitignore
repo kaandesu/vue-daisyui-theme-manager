@@ -14,7 +14,7 @@ dist
 live-demo
 *.local
 theme-manager.config.ts
-
+theme-config.ts
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
