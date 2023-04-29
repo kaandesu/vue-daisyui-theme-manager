@@ -46,7 +46,7 @@ createThemeManager(options?: ThemeOptions): (app: App) => void
 
 ### Usage in main.ts
 
-The `light` and `dark` options are the default themes that will be used when "`toggleDark()`" is called. Or when "`setTheme('default')`" is being called.
+The `light` and `dark` options are the default themes that will be used when "`toggleDark()`" is called. Or when "`set({theme:'default'})`" is being called.
 
 ```ts
 // main.ts
@@ -95,11 +95,11 @@ const $theme = useThemeManager()
 
 - `set` - Set a theme from the daisy theme options defined in the `tailwind.config.js`<br> Type definition:
   ```ts
-  set(theme: DaisyThemes): void
+  set({theme: DaisyThemes}): void
   ```
   usage example:
   ```ts
-  $theme.set('light')
+  $theme.set({theme:'light'})
   ```
 - `get` - Get the current active theme <br> Type definition:
   ```ts

@@ -2,7 +2,16 @@ import type { App } from 'vue'
 import { defaults, pluginInitiated, currentTheme, isDark } from './reactives'
 // @ts-ignore
 import config from './theme-config'
-export type DaisyThemes = (typeof config)[number]
+// @ts-ignore
+declare module './theme-config' {
+  export interface DaisyThemes {}
+}
+
+type ThemeConfigType = typeof config;
+// @ts-ignore
+export type DaisyThemes = ThemeConfigType[number];
+
+// export type DaisyThemes = (typeof config)[number]
 export type ThemeOptions = {
   light: DaisyThemes
   dark: DaisyThemes
@@ -27,17 +36,17 @@ export const useThemeManager = () => {
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
     isDark.value = event.matches
     const theme = event.matches ? (defaults.dark as DaisyThemes) : (defaults.light as DaisyThemes)
-    if (defaults.watchSystemTheme === true) setTheme(theme)
+    if (defaults.watchSystemTheme === true) setTheme({theme})
   })
 
   // Set theme
-  const setTheme = (theme: DaisyThemes) => {
+  const setTheme = (setting : {theme: DaisyThemes}) => {
     let _light = defaults.light as DaisyThemes
     let _dark = defaults.dark as DaisyThemes
     // if default, set theme based on system preferred theme and the default light and dark themes
     let newTheme: DaisyThemes = 'default'
-    if (theme === 'default') newTheme = isDark.value ? _dark : _light
-    else newTheme = theme
+    if (setting.theme === 'default') newTheme = isDark.value ? _dark : _light
+    else newTheme = setting.theme
 
     return document.documentElement.setAttribute('data-theme', (currentTheme.value = newTheme))
   }
@@ -59,7 +68,7 @@ export const useThemeManager = () => {
   const setDefaults = (themes: { light?: DaisyThemes; dark?: DaisyThemes }) => {
     defaults.light = themes.light ?? defaults.light
     defaults.dark = themes.dark ?? defaults.dark
-    setTheme('default')
+    setTheme({theme:'default'})
   }
   // Get default light and dark themes
   const getDefaults = () => {
@@ -67,7 +76,7 @@ export const useThemeManager = () => {
   }
   const isWatchingSystemTheme = (bool?: boolean, updateTheme: boolean = true) => {
     if (bool === undefined) return defaults.watchSystemTheme
-    if (bool && updateTheme) setTheme('default')
+    if (bool && updateTheme) setTheme({theme:'default'})
     return (defaults.watchSystemTheme = bool)
   }
 
