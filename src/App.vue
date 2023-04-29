@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type DaisyThemes, useThemeManager } from './themeManager'
+import { useThemeManager } from 'vue-daisyui-theme-manager'
 const daisyThemes = [
   'default',
   'light',
@@ -36,7 +36,7 @@ const daisyThemes = [
 ] as const;
 import { ref, computed } from 'vue';
 const $theme = useThemeManager()
-const changeTheme = (e: any) => $theme.set(e.target.value as DaisyThemes)
+const changeTheme = (e: any) => $theme.set({theme:e.target.value})
 const selected = computed(() => $theme.get())
 const useSystem = ref<boolean>($theme.watchSystemTheme())
 const toggleWatchSystem = () => $theme.watchSystemTheme(useSystem.value)
@@ -56,6 +56,7 @@ const isDarkMode = computed(() => {
   <div class="container">
     <section class="options-container">
       <div class="flexCol">
+        Select theme:
         <select v-model="selected" @change="e => changeTheme(e)" class="select select-primary w-full max-w-xs">
           <option disabled selected>Select a theme!</option>
           <option v-for="theme in daisyThemes" :key="theme">{{ theme }}</option>

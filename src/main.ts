@@ -4,6 +4,6 @@ import App from './App.vue'
 import { createThemeManager } from '../src/themeManager'
 
 const app = createApp(App)
-app.use(createThemeManager({ light: 'breeze', dark: 'storm', watchSystemTheme: true }))
+app.use(createThemeManager({ light: 'light', dark: 'dark', watchSystemTheme: true }))
 
 app.mount('#app')
